@@ -18,8 +18,9 @@
 							"})\r",
 							"\r",
 							"const jsonData = pm.response.json();\r",
-							"\r",
 							"pm.environment.set('timeZone', jsonData.time)\r",
+							"\r",
+							"\r",
 							"\r",
 							"pm.test('Наличие data в ответе', function () {\r",
 							"    var jsonData = pm.response.json();\r",
@@ -33,7 +34,8 @@
 							"\r",
 							""
 						],
-						"type": "text/javascript"
+						"type": "text/javascript",
+						"packages": {}
 					}
 				}
 			],
