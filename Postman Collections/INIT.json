@@ -59,17 +59,14 @@
 		}
 	],
 	"auth": {
-		"type": "basic",
-		"basic": {
-			"password": "123456",
-			"username": "test@hezzl.com"
-		}
+		"type": "inherit",
+		"inherit": {}
 	},
 	"event": [
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "08f635e4-3ed5-4435-afbd-037250e25645",
+				"id": "06491d67-d880-455f-8ea2-0e21ee1b24df",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -79,7 +76,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "c523d608-92f1-40f8-b040-a1e23a9c0c11",
+				"id": "fe506a78-577d-47e1-acd6-8b93dcbd415a",
 				"type": "text/javascript",
 				"exec": [
 					""
