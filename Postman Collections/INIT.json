@@ -1,0 +1,90 @@
+{
+	"info": {
+		"_postman_id": "a35eb45a-dae7-4cce-8454-5715da317569",
+		"name": "INIT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Init",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e92b0c56-3a7b-450d-95ef-96028749edca",
+						"exec": [
+							"pm.test('Status code is 200', function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"\r",
+							"const jsonData = pm.response.json();\r",
+							"\r",
+							"pm.environment.set('timeZone', jsonData.time)\r",
+							"\r",
+							"pm.test('Наличие data в ответе', function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.have.property('data');\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Наличие параметра auth в data в ответе \", function () {\r",
+							"  var jsonData = pm.response.json();\r",
+							"  pm.expect(jsonData.data).to.have.property('auth');\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "c22a74da-3c6b-482e-8e9d-49da06c56721",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"Qaz\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{baseUrl}}/gw/v1/game/{{campaignId}}/init"
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": {
+			"password": "123456",
+			"username": "test@hezzl.com"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "08f635e4-3ed5-4435-afbd-037250e25645",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "c523d608-92f1-40f8-b040-a1e23a9c0c11",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
